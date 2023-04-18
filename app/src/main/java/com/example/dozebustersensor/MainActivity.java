@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                     //MediaPlayer mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.mixkit_double_beep_tone_alert_2868);
                     //mediaPlayer.start();
                 }
-            }
+            }//uilu
 
             @Override
             public void onAccuracyChanged(Sensor sensor, int i) {
