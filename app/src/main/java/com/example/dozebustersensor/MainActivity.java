@@ -55,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
                     textview.setText("Come back and study!");
 
                     //play sound
-                    //MediaPlayer mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.mixkit_double_beep_tone_alert_2868);
-                    //mediaPlayer.start();
+                    MediaPlayer mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.mixkit_double_beep_tone_alert_2868);
+                    mediaPlayer.start();
                 }
             }//uilu789
 
