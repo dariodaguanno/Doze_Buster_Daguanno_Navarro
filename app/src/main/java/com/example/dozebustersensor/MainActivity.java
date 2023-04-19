@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     private Sensor proximitySensor;
     private SensorEventListener proximitySensorListener;
 
+    private static final float PROXIMITY_THRESHOLD_MIN = 3.0f; // minimum proximity threshold
+    private static final float PROXIMITY_THRESHOLD_MAX = 5.0f; // maximum proximity threshold
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +42,10 @@ public class MainActivity extends AppCompatActivity {
             @SuppressLint("SetTextI18n")
             @Override
             public void onSensorChanged(SensorEvent sensorEvent) {
-                if (sensorEvent.values[0] < proximitySensor.getMaximumRange()){
+
+                float proximityValue = sensorEvent.values[0];// get the sensor value
+
+                if (proximityValue >= PROXIMITY_THRESHOLD_MIN && proximityValue <= PROXIMITY_THRESHOLD_MAX){
                     ImageView imageview = (ImageView) findViewById(R.id.proximityImage);
                     imageview.setVisibility(imageview.VISIBLE);
                     getWindow().getDecorView().setBackgroundColor(Color.WHITE);
