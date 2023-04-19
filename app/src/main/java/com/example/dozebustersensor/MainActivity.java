@@ -8,6 +8,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -52,8 +53,12 @@ public class MainActivity extends AppCompatActivity {
                     getWindow().getDecorView().setBackgroundColor(Color.RED);
                     TextView textview = (TextView)  findViewById(R.id.proximityText);
                     textview.setText("Come back and study!");
+
+                    //play sound
+                    MediaPlayer mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.mixkit_double_beep_tone_alert_2868);
+                    mediaPlayer.start();
                 }
-            }
+            }//uilu789
 
             @Override
             public void onAccuracyChanged(Sensor sensor, int i) {
